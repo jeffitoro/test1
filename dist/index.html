@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Title</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </header>
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active" role="presentation"><a data-toggle="tab" href="#exo-1">exo 1</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-2">exo 2</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-3">exo 3</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-4">exo 4</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-5">exo 5</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-6">exo 6</a></li>
+        </ul>
+        <div class="tab-content">
+            <section id="exo-1" role="tabpanel" class="tab-pane active">
+                <h1>dire bonjours dans la console</h1>
+                <p> définir une variable avec un objet string et l'afficher dan la console.</p>
+                <div class="exo"></div>
+            </section>
+            <section id="exo-2" role="tabpanel" class="tab-pane">
+                <h1>selectionner un élément du DOM</h1>
+                <p>afficher dans la conole un élément du DOM. et a propriete texte.</p>
+                <div class="exo">
+                    <h4 id="element-to-select">Select me</h4>
+                </div>
+            </section>
+            <section id="exo-3" role="tabpanel" class="tab-pane">
+                <h1>capturer un evenement du DOM</h1>
+                <p>ajouter un ecouteur d'evenement a un bouton</p>
+                <div class="exo">
+                    <button id="first-event">click me</button>
+                </div>
+            </section>
+            <section id="exo-4" role="tabpanel" class="tab-pane">
+                <h1>remplacer le contenu d'un element</h1>
+                <p>mettre le contenu d'un element input dans un sous-titre lorsque l'on clique sur un boutton</p>
+                <div class="exo">
+                    <h4 id="title-to-change">...en attente</h4>
+                    <input type="text" id="title-content">
+                    <button id="change-title">click me</button>
+                </div>
+            </section>
+            <section id="exo-5" role="tabpanel" class="tab-pane">
+                <h1>remplacer le contenu d'un element</h1>
+                <p>mettre le contenu d'un element input dans un sous-titre lorsque l'on clique sur un boutton</p>
+                <div class="exo">
+                    <h4 id="title-to-change">...en attente</h4>
+                    <input type="text" id="title-content">
+                    <button id="change-title">click me</button>
+                </div>
+            </section>
+            <section id="exo-6" role="tabpanel" class="tab-pane">
+                <h1>Créer et ajouter des éléments au dom</h1>
+                <p>Ajouter des éléments dans une liste au click</p>
+                <button class="btn btn-success">Ajouter element</button>
+                <ul>
+
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/bundle.js"></script>
+</body>
+
+</html>
