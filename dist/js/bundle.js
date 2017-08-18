@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -78,28 +78,20 @@ module.exports = __webpack_require__(2);
 "use strict";
 
 
-__webpack_require__(7);
+__webpack_require__(2);
 
-__webpack_require__(8);
+__webpack_require__(3);
 
-__webpack_require__(9);
+__webpack_require__(4);
 
-__webpack_require__(10);
+__webpack_require__(5);
 
-__webpack_require__(11);
+__webpack_require__(6);
+
+__webpack_require__(12);
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -111,7 +103,7 @@ var phrase = "Bonjours tout le monde";
 console.log(phrase);
 
 /***/ }),
-/* 8 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -127,7 +119,7 @@ element.innerText = "ceci est le contenu modifier en js";
 console.log(element.innerText);
 
 /***/ }),
-/* 9 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -146,7 +138,7 @@ var direbonjour = function direbonjour() {
 btn3.addEventListener('click', direbonjour);
 
 /***/ }),
-/* 10 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -168,7 +160,7 @@ var changerTitre = function changerTitre() {
 btn4.addEventListener('click', changerTitre);
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -209,6 +201,45 @@ var viderchamp = function viderchamp() {
     }
 };
 inputchanger.addEventListener('click', viderchamp);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+//Recuperer les éléments
+var section6 = document.querySelector("#exo-6");
+//recuperer les element dont on va se servir
+var btn = section6.querySelector("#button");
+var links = section6.querySelector("#links");
+//Definir les fonctionnalités
+
+//aojuter un élément
+var ajoutEle = function ajoutEle() {
+    //créer un élé li
+    var li = document.createElement('li');
+    //mettre du txt ds l'élé li
+    li.innerText = "Element";
+    //mettre la class group
+    li.className = "list-group-item";
+    //ajout l'élé li à la fin de l'élé ul
+    links.appendChild(li);
+};
+
+//ajout les écouteurs d'événement
+btn.addEventListener("click", ajoutEle);
 
 /***/ })
 /******/ ]);
