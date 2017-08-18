@@ -224,14 +224,17 @@ var section6 = document.querySelector("#exo-6");
 //recuperer les element dont on va se servir
 var btn = section6.querySelector("#button");
 var links = section6.querySelector("#links");
+var input = section6.querySelector("#text-input");
 //Definir les fonctionnalités
 
 //aojuter un élément
 var ajoutEle = function ajoutEle() {
     //créer un élé li
     var li = document.createElement('li');
+    //recuperer element de l'input
+    var text = input.value;
     //mettre du txt ds l'élé li
-    li.innerText = "Element";
+    li.innerText = text;
     //mettre la class group
     li.className = "list-group-item";
     //ajout l'élé li à la fin de l'élé ul
