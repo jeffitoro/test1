@@ -233,14 +233,22 @@ var ajoutEle = function ajoutEle() {
     var li = document.createElement('li');
     //recuperer element de l'input
     var text = input.value;
-    //mettre du txt ds l'élé li
-    li.innerText = text;
-    //mettre la class group
-    li.className = "list-group-item";
-    //ajout l'élé li à la fin de l'élé ul
-    links.appendChild(li);
+    //verification
+    if (text == "") {
+        console.log("input est vide");
+        input.classList.add("error");
+        input.setAttribute("placeholder", "champ obligatoire!");
+    } else {
+        //remove class error
+        input.classList.remove("error");
+        //mettre du txt ds l'élé li
+        li.innerText = text;
+        //mettre la class group
+        li.className = "list-group-item";
+        //ajout l'élé li à la fin de l'élé ul
+        links.appendChild(li);
+    }
 };
-
 //ajout les écouteurs d'événement
 btn.addEventListener("click", ajoutEle);
 
