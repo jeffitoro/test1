@@ -228,6 +228,7 @@ var ajoutEle = function ajoutEle() {
         console.log("input est vide");
         input.classList.add("error");
         input.setAttribute("placeholder", "champ obligatoire!");
+        input.blur();
     } else {
         //remove class error
         input.classList.remove("error");
@@ -246,13 +247,21 @@ var ajoutEle = function ajoutEle() {
 //ajout les écouteurs d'événement
 btn.addEventListener("click", ajoutEle);
 
-//
+//use console.log() console.dir()
+//evenement check enter
 var checkey = function checkey(event) {
     if (event.code == "Enter") {
         ajoutEle();
     }
 };
 input.addEventListener('keyup', checkey);
+//this represent lelement qui a provoqué l'évenement
+input.addEventListener("click", function () {
+    if (input.getAttribute("placeholder") == "champ obligatoire!") {
+        input.classList.remove("error");
+        input.setAttribute("placeholder", "");
+    }
+});
 
 /***/ }),
 /* 8 */
