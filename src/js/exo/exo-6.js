@@ -1,5 +1,5 @@
 //Recuperer les éléments
-let section6 = document.querySelector("#exo-6")
+let section6 = document.querySelector("#exo-6");
 //recuperer les element dont on va se servir
 let btn = section6.querySelector("#button");
 let links = section6.querySelector("#links");
