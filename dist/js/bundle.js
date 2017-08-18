@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(8);
 
 
 /***/ }),
@@ -88,7 +88,7 @@ __webpack_require__(5);
 
 __webpack_require__(6);
 
-__webpack_require__(12);
+__webpack_require__(7);
 
 /***/ }),
 /* 2 */
@@ -204,16 +204,6 @@ inputchanger.addEventListener('click', viderchamp);
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -249,10 +239,26 @@ var ajoutEle = function ajoutEle() {
         links.appendChild(li);
         //delete text input
         input.value = "";
+        //placeholder
+        input.setAttribute("placeholder", "entrer données");
     }
 };
 //ajout les écouteurs d'événement
 btn.addEventListener("click", ajoutEle);
+
+//
+var checkey = function checkey(event) {
+    if (event.code == "Enter") {
+        ajoutEle();
+    }
+};
+input.addEventListener('keyup', checkey);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

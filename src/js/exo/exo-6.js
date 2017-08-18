@@ -28,8 +28,17 @@ let ajoutEle = function () {
         links.appendChild(li);
         //delete text input
         input.value = "";
+        //placeholder
+        input.setAttribute("placeholder", "entrer données");
     }
-
 }
 //ajout les écouteurs d'événement
 btn.addEventListener("click", ajoutEle);
+
+//
+let checkey = function (event) {
+    if (event.code == "Enter") {
+        ajoutEle();
+    }
+}
+input.addEventListener('keyup', checkey);
