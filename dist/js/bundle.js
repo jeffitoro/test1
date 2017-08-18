@@ -247,6 +247,8 @@ var ajoutEle = function ajoutEle() {
         li.className = "list-group-item";
         //ajout l'élé li à la fin de l'élé ul
         links.appendChild(li);
+        //delete text input
+        input.value = "";
     }
 };
 //ajout les écouteurs d'événement
