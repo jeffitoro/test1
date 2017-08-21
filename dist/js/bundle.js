@@ -341,10 +341,55 @@ var res = section9.querySelector("#resultat");
 
 var somme = function somme() {
     res.style.display = "inline-block";
-    res.innerHTML = parseInt(input1.value) + parseInt(input2.value);
+
+    if (input1.value == "" && input2.value == "") {
+        input2.classList.add("error");
+        input2.setAttribute("placeholder", "champ obligatoire!");
+        input2.blur();
+        input1.classList.add("error");
+        input1.setAttribute("placeholder", "champ obligatoire!");
+        input1.blur();
+    } else if (input1.value == "") {
+        input1.classList.add("error");
+        input1.setAttribute("placeholder", "champ obligatoire!");
+        input1.blur();
+    } else if (input2.value == "") {
+        input2.classList.add("error");
+        input2.setAttribute("placeholder", "champ obligatoire!");
+        input2.blur();
+    } else {
+        res.innerHTML = parseInt(input1.value) + parseInt(input2.value);
+    }
+};
+var checkLetter = function checkLetter() {
+    var lastChar1 = input1.value.charAt(input1.value.length - 1);
+    var lastChar2 = input2.value.charAt(input2.value.length - 1);
+    var reg = new RegExp("[^0-9]");
+    if (reg.test(lastChar1)) {
+        var newS = input1.value.substr(0, input1.value.length - 1);
+        input1.value = newS;
+    } else if (reg.test(lastChar2)) {
+        var _newS = input2.value.substr(0, input2.value.length - 1);
+        input2.value = _newS;
+    }
 };
 
+input1.addEventListener("keyup", checkLetter);
+input2.addEventListener("keyup", checkLetter);
 buttonS.addEventListener("click", somme);
+input1.addEventListener("click", function () {
+    if (input1.getAttribute("placeholder") == "champ obligatoire!") {
+        input1.classList.remove("error");
+        input1.setAttribute("placeholder", "");
+    }
+});
+input2.addEventListener("click", function () {
+    console.dir(this);
+    if (this.classList.contains("error")) {
+        this.classList.remove("error");
+        this.setAttribute("placeholder", "");
+    }
+});
 
 /***/ }),
 /* 11 */
