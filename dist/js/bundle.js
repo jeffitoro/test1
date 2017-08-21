@@ -306,11 +306,21 @@ var deleteE = function deleteE() {
     var taille = this.offsetWidth + "px";
     span.style.width = taille;
     span.style.display = "inline-block";
+    var parent = this.parentNode; //pour qu'il ne s'efface pas
     this.parentNode.replaceChild(span, this);
+    //2ème partie ajouter un btn à la suite
+    var newButton = document.createElement("Button");
+    newButton.className = "btn btn-warning";
+    newButton.innerText = "Delete me";
+    console.log(btn);
+    console.dir(btn);
+    parent.append(newButton);
+    newButton.addEventListener('click', deleteE);
 };
 // btn.addEventListener("click", d);
 
 btn.forEach(function (element) {
+    //il met a tous les button un ecouter devenemnts
     element.addEventListener("click", deleteE);
 });
 
