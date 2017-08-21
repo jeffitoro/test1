@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(10);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
@@ -93,6 +93,8 @@ __webpack_require__(7);
 __webpack_require__(8);
 
 __webpack_require__(9);
+
+__webpack_require__(10);
 
 /***/ }),
 /* 2 */
@@ -326,6 +328,26 @@ btn.forEach(function (element) {
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var section9 = document.querySelector("#exo-9");
+var input1 = section9.querySelector("#input1");
+var input2 = section9.querySelector("#input2");
+var buttonS = section9.querySelector("button");
+var res = section9.querySelector("#resultat");
+
+var somme = function somme() {
+    res.style.display = "inline-block";
+    res.innerHTML = parseInt(input1.value) + parseInt(input2.value);
+};
+
+buttonS.addEventListener("click", somme);
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
