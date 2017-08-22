@@ -336,8 +336,10 @@ btn.forEach(function (element) {
 var section9 = document.querySelector("#exo-9");
 var input1 = section9.querySelector("#input1");
 var input2 = section9.querySelector("#input2");
-var buttonS = section9.querySelector("button");
+var buttonS = section9.querySelector("#buttonResultat");
 var res = section9.querySelector("#resultat");
+var operator = section9.querySelector("#options");
+var reset = section9.querySelector("#buttonReset");
 
 var somme = function somme() {
     res.style.display = "inline-block";
@@ -358,17 +360,35 @@ var somme = function somme() {
         input2.setAttribute("placeholder", "champ obligatoire!");
         input2.blur();
     } else {
-        res.innerHTML = parseInt(input1.value) + parseInt(input2.value);
+        switch (operator.value) {
+            case "+":
+                res.innerHTML = " " + (parseFloat(input1.value) + parseFloat(input2.value));
+                break;
+            case "-":
+                res.innerHTML = " " + (parseFloat(input1.value) - parseFloat(input2.value));
+                break;
+            case "/":
+                res.innerHTML = " " + parseFloat(input1.value) / parseFloat(input2.value);
+                break;
+            case "*":
+                res.innerHTML = " " + parseFloat(input1.value) * parseFloat(input2.value);
+                break;
+            default:
+                break;
+        }
     }
 };
+
 var checkLetter = function checkLetter() {
-    var reg = new RegExp("[^0-9]");
-    while (reg.test(input1.value) || reg.test(input2.value)) {
-        if (reg.test(input1.value)) {
-            var newS = input1.value.replace(reg, "");
+    var reg = new RegExp("^-?[0-9]*\.?[0-9]*$");
+    // let reg = new RegExp("[^0-9]");
+    while (!reg.test(input1.value) || !reg.test(input2.value)) {
+        var reg2 = new RegExp("[^0-9]");
+        if (!reg.test(input1.value)) {
+            var newS = input1.value.replace(reg2, "");
             input1.value = newS;
-        } else {
-            var _newS = input2.value.replace(reg, "");
+        } else if (!reg.test(input2.value)) {
+            var _newS = input2.value.replace(reg2, "");
             input2.value = _newS;
         }
     }
@@ -389,6 +409,22 @@ input2.addEventListener("click", function () {
         this.classList.remove("error");
         this.setAttribute("placeholder", "");
     }
+});
+// input1.addEventListener("drop", function () {
+// input1.value = "";
+// });
+input1.ondrop = function () {
+    return false;
+    // input2.value = "";
+};
+input2.ondrop = function () {
+    return false;
+    // input2.value = "";
+};
+reset.addEventListener("click", function () {
+    input1.value = "";
+    input2.value = "";
+    res.innerHTML = "";
 });
 
 /***/ }),
