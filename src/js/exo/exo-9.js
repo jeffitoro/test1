@@ -27,15 +27,15 @@ let somme = function () {
     }
 }
 let checkLetter = function () {
-    let lastChar1 = input1.value.charAt(input1.value.length - 1);
-    let lastChar2 = input2.value.charAt(input2.value.length - 1);
     let reg = new RegExp("[^0-9]");
-    if (reg.test(lastChar1)) {
-        let newS = input1.value.substr(0, input1.value.length - 1);
-        input1.value = newS;
-    } else if (reg.test(lastChar2)) {
-        let newS = input2.value.substr(0, input2.value.length - 1);
-        input2.value = newS;
+    while (reg.test(input1.value) || reg.test(input2.value)) {
+        if (reg.test(input1.value)) {
+            let newS = input1.value.replace(reg, "");
+            input1.value = newS;
+        } else {
+            let newS = input2.value.replace(reg, "");
+            input2.value = newS;
+        }
     }
 }
 

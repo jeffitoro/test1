@@ -362,15 +362,15 @@ var somme = function somme() {
     }
 };
 var checkLetter = function checkLetter() {
-    var lastChar1 = input1.value.charAt(input1.value.length - 1);
-    var lastChar2 = input2.value.charAt(input2.value.length - 1);
     var reg = new RegExp("[^0-9]");
-    if (reg.test(lastChar1)) {
-        var newS = input1.value.substr(0, input1.value.length - 1);
-        input1.value = newS;
-    } else if (reg.test(lastChar2)) {
-        var _newS = input2.value.substr(0, input2.value.length - 1);
-        input2.value = _newS;
+    while (reg.test(input1.value) || reg.test(input2.value)) {
+        if (reg.test(input1.value)) {
+            var newS = input1.value.replace(reg, "");
+            input1.value = newS;
+        } else {
+            var _newS = input2.value.replace(reg, "");
+            input2.value = _newS;
+        }
     }
 };
 
