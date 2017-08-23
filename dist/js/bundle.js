@@ -340,7 +340,9 @@ var buttonS = section9.querySelector("#buttonResultat");
 var res = section9.querySelector("#resultat");
 var operator = section9.querySelector("#options");
 var reset = section9.querySelector("#buttonReset");
-
+var groupButton = section9.querySelectorAll(".btn-group button");
+var select = section9.querySelector("select");
+console.log(groupButton);
 var somme = function somme() {
     res.style.display = "inline-block";
 
@@ -360,6 +362,7 @@ var somme = function somme() {
         input2.setAttribute("placeholder", "champ obligatoire!");
         input2.blur();
     } else {
+        ;
         switch (operator.value) {
             case "+":
                 res.innerHTML = " " + (parseFloat(input1.value) + parseFloat(input2.value));
@@ -380,10 +383,11 @@ var somme = function somme() {
 };
 
 var checkLetter = function checkLetter() {
-    var reg = new RegExp("^-?[0-9]*\.?[0-9]*$");
+    var reg = /^-?[0-9]*\.?[0-9]*$/;
     // let reg = new RegExp("[^0-9]");
     while (!reg.test(input1.value) || !reg.test(input2.value)) {
-        var reg2 = new RegExp("[^0-9]");
+        var reg2 = /[^0-9]/;
+        // let reg2 = /^(.(?!\d)|\D)+/;
         if (!reg.test(input1.value)) {
             var newS = input1.value.replace(reg2, "");
             input1.value = newS;
@@ -404,7 +408,6 @@ input1.addEventListener("click", function () {
     }
 });
 input2.addEventListener("click", function () {
-    console.dir(this);
     if (this.classList.contains("error")) {
         this.classList.remove("error");
         this.setAttribute("placeholder", "");
@@ -425,6 +428,27 @@ reset.addEventListener("click", function () {
     input1.value = "";
     input2.value = "";
     res.innerHTML = "";
+});
+var miseAjourOper = function miseAjourOper() {
+    switch (this.textContent) {
+        case "+":
+            select.selectedIndex = 1;break;
+        case "-":
+            select.selectedIndex = 2;break;
+        case "/":
+            select.selectedIndex = 3;break;
+        case "*":
+            select.selectedIndex = 4;break;
+        default:
+            break;
+    }
+};
+// groupButton.forEach(function (element) {
+//     console.log(element);
+//     element.addEventListener("click", miseAjour);
+// });;
+groupButton.forEach(function (element) {
+    element.addEventListener("click", miseAjourOper);
 });
 
 /***/ }),
