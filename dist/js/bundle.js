@@ -529,8 +529,7 @@ function isOperator(string) {
  * fait l'operation lorsque on rentre enter ou "="
  */
 function operation(string) {
-
-    if (/\=/.test(string) && /\-|\./.test(inputCollection[0].value) && /\-|\./.test(inputCollection[1].value) && inputCollection[0].value.length > 0 && inputCollection[1].value.length > 0) {
+    if (/\=/.test(string) && !(/\-|\./.test(inputCollection[0].value) && /\-|\./.test(inputCollection[1].value)) && inputCollection[0].value.length > 0 && inputCollection[1].value.length > 0) {
         switch (updateButton.textContent) {
             case "/":
                 resultat.value = " " + parseFloat(inputCollection[0].value) / parseFloat(inputCollection[1].value);break;
@@ -597,14 +596,13 @@ function clearAll(string) {
 /**
  * check enter and put resultat
  */
-function checkEnter(event) {
+function checkKeysInputs(event) {
     if (event.code == "Enter") {
         operation("=");
     }
-}
-/**
- * check if button  
-    return /\-|[0-9]|\./.test(string);
+    while (!/^-?[0-9]*\.?[0-9]*$/.test(this.value)) {
+        this.value = this.value.substr(0, this.value.length - 1);
+    }
 }
 /**
  * check input active et change content variable
@@ -613,6 +611,15 @@ function getResultI() {
     inputActive = this;
     console.log(inputActive.id);
 }
+/**
+ * check drops
+ */
+function checkDrop() {
+    inputActive.value = "";
+    if (inputActive != "") {
+        inputActive.value = "";
+    }
+}
 
 window.addEventListener("load", init);
 buttons.forEach(function (element) {
@@ -620,7 +627,8 @@ buttons.forEach(function (element) {
 });
 inputCollection.forEach(function (element) {
     element.addEventListener("focus", getResultI);
-    element.addEventListener("keyup", checkEnter);
+    element.addEventListener("keyup", checkKeysInputs);
+    element.addEventListener("drop", checkDrop);
 });
 
 /***/ }),
