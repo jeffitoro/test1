@@ -61,7 +61,8 @@
             <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-6">exo 6</a></li>
             <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-7">exo 7</a></li>
             <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-8">exo 8</a></li>
-            <li class="active" role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-9">exo 9</a></li>
+            <li role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-9">exo 9</a></li>
+            <li class="active" role="presentation"><a aria-controls="settings" role="tab" data-toggle="tab" href="#exo-10">exo 10</a></li>
         </ul>
         <div class="tab-content">
             <section id="exo-1" role="tabpanel" class="tab-pane">
@@ -127,7 +128,7 @@
                 <button id="button" class="btn btn-warning">Delete Me</button>
                 <button id="button" class="btn btn-warning">Delete Me</button>
             </section>
-            <section id="exo-9" role="tabpanel" class="tab-pane active">
+            <section id="exo-9" role="tabpanel" class="tab-pane">
                 <h1>Calcul somme</h1>
                 <p>somme</p>
                 <button id="buttonReset" type="button" class="btn btn-info">Reset</button>
@@ -150,11 +151,69 @@
                 <div id="resultat"></div>
 
             </section>
+            <section id="exo-10" role="tabpanel" class="tab-pane active">
+                <h1>Calculator V2</h1>
+                <div class="row calculator-fond">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 calculator">
+                        <div class="buttons">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="number" id="input1">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" id="updateOperator">..</button>
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="number" id="input2">
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default buttons" type="button" id="button-resultat">=</button>
+                                    </span>
+                                        <input type="text" class="form-control" placeholder="résultat" id="resultat" readonly="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-default" type="button">7</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">8</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">9</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button" id="operator">+</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-default" type="button">4</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">5</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">6</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button" id="operator">-</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-default" type="button">1</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">2</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">3</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button" id="operator">/</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3"><button class="btn btn-default" type="button" id="operator">C</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">0</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button">.</button></div>
+                                <div class="col-md-3"><button class="btn btn-default" type="button" id="operator">*</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><button class="btn btn-default" type="button" id="button-resultat">=</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            </div>
         </div>
-    </div>
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./js/bundle.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./js/bundle.js"></script>
 </body>
 
 </html>

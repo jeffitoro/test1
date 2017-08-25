@@ -32,9 +32,9 @@ let somme = function () {
         input2.blur();
     } else {
         switch (operator.value) {
+            case "/": res.innerHTML = " " + (parseFloat(input1.value) / parseFloat(input2.value)); break;
             case "+": res.innerHTML = " " + (parseFloat(input1.value) + parseFloat(input2.value)); break;
             case "-": res.innerHTML = " " + (parseFloat(input1.value) - parseFloat(input2.value)); break;
-            case "/": res.innerHTML = " " + (parseFloat(input1.value) / parseFloat(input2.value)); break;
             case "*": res.innerHTML = " " + (parseFloat(input1.value) * parseFloat(input2.value)); break;
             default: break;
         }
@@ -132,4 +132,3 @@ reset.addEventListener("click", function () {
 groupButton.forEach(function (element) {
     element.addEventListener("click", miseAjourOper);
 })
-1
